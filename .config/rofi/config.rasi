@@ -1,0 +1,7 @@
+configuration {
+	modi: "window,drun,combi";
+	terminal: "gnome-terminal";
+	show-icons: true;
+	conbi-modi: "window, drun,ssh";
+	}
+	@theme "solarized"
