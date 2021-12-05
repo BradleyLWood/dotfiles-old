@@ -22,6 +22,8 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myConfig = desktopConfig { modMask 						= mod4Mask
 												 , borderWidth				= 2
 												 , focusFollowsMouse 	= False
-												 , terminal						= "gnome-terminal"
+												 , terminal						= "alacritty"
+												 , normalBorderColor	= "#000000"
+												 , focusedBorderColor	= "#d33682"
 												 } `additionalKeysP` myKeys
 
