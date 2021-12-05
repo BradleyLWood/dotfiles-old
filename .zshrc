@@ -1,8 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/usr/local/go/bin:$HOME/bin:$HOME/local/bin:/usr/local/bin:$(yarn global bin):$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/home/bradley/.oh-my-zsh"
+# If you come from bash you might have to change your $PATH. export PATH=$HOME/usr/local/go/bin:$HOME/bin:$HOME/local/bin:/usr/local/bin:$PATH Path to your oh-my-zsh installation. export ZSH="/home/bradley/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
