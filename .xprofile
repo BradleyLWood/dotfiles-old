@@ -3,6 +3,11 @@ xrandr --output DVI-D-1 --mode 1440x900 --pos 2560x472 --rotate normal --output 
 
 # swap caps lock and escape keys
 setxkbmap -option caps:escape
+setxkbmap -option escape:caps
+
+xbindkeys &
 
 # set wallpaper
-feh --bg-scale $HOME/Pictures/Wallpapers/solarized-wallpaper-golang.png &
+feh --bg-scale $HOME/Pictures/Wallpapers/nordunderwater.png &
+
+$HOME/bin/pulse-volume-watcher.py | xob & > /dev/null

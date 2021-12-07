@@ -1,7 +1,8 @@
 configuration {
-	modi: "window,drun,combi";
-	terminal: "gnome-terminal";
+	modi: [window,drun,combi];
+	terminal: "alacritty";
 	show-icons: true;
-	conbi-modi: "window, drun,ssh";
+	combi-modi: [window,drun,ssh];
+	columns: 3;
 	}
-	@theme "solarized"
+	@theme "nord"

@@ -1,0 +1,52 @@
+set fish_greeting ""
+
+set -gx TERM xterm-256color
+
+# Commands to run in interactive sessions can go here
+fish_vi_key_bindings
+
+# Aliases
+alias ls "ls -1hpG --group-directories-first --color"
+alias la "ls -A"
+alias ll "ls -l"
+alias lla "ll -lA"
+alias g git
+# Attach tmux to a session if one exists, otherwise creates one
+alias t="tmux -u attach || tmux -u new"
+# Attaches tmux to a session (example: ta portal)
+alias ta='tmux attach -t'
+# Creates a new named session (example: tn portal)
+alias tn='tmux new -s'
+
+# git abbreviations
+abbr -a gd "git diff -M"
+abbr -a ga "git add"
+abbr -a gaa "git add --all ."
+abbr -a gbd "git branch -D"
+abbr -a gs "git status"
+abbr -a gca "git commit -a -m"
+abbr -a gm "git merge --no-ff"
+abbr -a gpt "git push --tags"
+abbr -a gp "git push"
+abbr -a grh "git reset --hard"
+abbr -a gb "git branch"
+abbr -a gcob "git checkout -b"
+abbr -a gco "git checkout"
+abbr -a gba "git branch -a"
+abbr -a gl "git log --pretty=format:\"%Cgreen%h%Creset - %Cblue%an%Creset @ %ar : %s\""
+abbr -a gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+abbr -a glv "git log --stat"
+abbr -a gpom "git pull origin master"
+
+# dotfile git commands
+abbr -a config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
+
+set -gx EDITOR nvim
+
+set -gx PATH bin $PATH
+set -gx PATH ~/bin $PATH
+set -gx PATH ~/local/bin $PATH
+set -gx PATH /usr/local/bin $PATH
+
+set -g GOPATH ~/go
+set -gx PATH $GOPATH/bin $PATH
