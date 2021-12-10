@@ -10,6 +10,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
 
+	" LSP =======================================================
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+	
+	
 	" Tools =====================================================
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'dense-analysis/ale'
@@ -20,7 +29,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'liuchengxu/vim-which-key'
 	Plug 'mattn/emmet-vim'
 	Plug 'mbbill/undotree'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'rbgrouleff/bclose.vim'
 	Plug 'scrooloose/nerdtree'

@@ -7,10 +7,14 @@ fish_vi_key_bindings
 
 # Aliases
 
-alias ls "ls -1hpG --group-directories-first --color"
-alias la "ls -A"
+#alias ls "ls -hpG --group-directories-first --color"
+#alias la "ls -A"
+#alias ll "ls -l"
+#alias lla "la -A"
+alias ls "exa --icons --group-directories-first"
+alias la "ls -a"
 alias ll "ls -l"
-alias lla "ll -lA"
+alias lla "la -l"
 
 # Attach tmux to a session if one exists, otherwise creates one
 alias t="tmux -u attach || tmux -u new"
@@ -20,7 +24,7 @@ alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
 # dotfile git commands
-alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
+alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME '
 
 
 # git abbreviations
