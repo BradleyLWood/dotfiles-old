@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 	" Tools =====================================================
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'dense-analysis/ale'
-"	Plug 'francoiscabrol/ranger.vim'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'kevinhwang91/rnvimr'
@@ -33,4 +32,3 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-syntastic/syntastic'
 	Plug 'vimwiki/vimwiki'
 call plug#end()
-

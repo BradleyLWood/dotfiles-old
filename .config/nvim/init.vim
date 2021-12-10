@@ -1,6 +1,5 @@
-runtime ./maps.vim
-runtime ./plug.vim
-runtime ./which-key.vim
+runtime ./plugins/*.vim
+source ./maps.vim
 
 filetype plugin indent on
 syntax on
@@ -9,10 +8,6 @@ set nocompatible
 
 set noshowmode
 
-set background=dark
-set termguicolors
-"colorscheme solarized8
-colorscheme nord
 
 set nowrap
 set ruler
@@ -44,6 +39,7 @@ set showmatch
 
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+" Status line
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
@@ -68,20 +64,14 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-
-
+" vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
-
 let g:instant_markdown_autostart = 0         " Turns off auto preview
 let g:instant_markdown_browser = "surf"      " Uses surf for preview
 map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
 map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
 
-nnoremap <Leader>b :ls<CR>:b<Space>
 
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\ 
@@ -89,3 +79,8 @@ set fillchars+=vert:\
 " Make Ranger replace netrw and be the file explorer
 let g:rnvimr_ex_enable = 1
 
+" Themes
+set termguicolors
+set background=dark
+source ./themes/nord.vim
+"source ./themes/solarized.vim

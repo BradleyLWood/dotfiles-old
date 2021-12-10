@@ -17,6 +17,9 @@ nnoremap x "_x
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" List buffers
+nnoremap <Leader>b :ls<CR>:b<Space>
+
 " Delete a word backwards
 nnoremap dw vb"_d
 
@@ -65,6 +68,7 @@ nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
+" Better wrapped navigation
 nnoremap j gj
 nnoremap k gk
 
