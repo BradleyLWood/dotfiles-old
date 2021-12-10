@@ -71,12 +71,10 @@ myXmobarPP xmproc = def
     { ppSep             = white " | "
     , ppTitle           = green . shorten 40
     , ppTitleSanitize   = xmobarStrip
-    , ppCurrent         = wrap "[" "]"
+    , ppCurrent         = wrap "<" ">"
     , ppVisible         = white
-    , ppHidden          = lowWhite . wrap " " ""
-    --, ppHiddenNoWindows = lowWhite . wrap " " ""
+    , ppHidden          = lowWhite
     , ppUrgent          = red . wrap "!" "!"
-    , ppOrder           = \(ws:l:t:ex) -> [ws,l]++ex++[t]
     , ppOutput          = hPutStrLn xmproc
     }
   where
@@ -87,7 +85,7 @@ myXmobarPP xmproc = def
     green    = xmobarColor "#A3BE8C" ""
     blue     = xmobarColor "#81A1C1" ""
     white    = xmobarColor "#E5E9F0" ""
-    lowWhite = xmobarColor "#AEB3BB" ""
+    lowWhite = xmobarColor "#586266" ""
     yellow   = xmobarColor "#EBCB8B" ""
     magenta  = xmobarColor "#B48EAD" ""
 
