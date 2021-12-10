@@ -6,17 +6,22 @@ set -gx TERM xterm-256color
 fish_vi_key_bindings
 
 # Aliases
+
 alias ls "ls -1hpG --group-directories-first --color"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -lA"
-alias g git
+
 # Attach tmux to a session if one exists, otherwise creates one
 alias t="tmux -u attach || tmux -u new"
 # Attaches tmux to a session (example: ta portal)
 alias ta='tmux attach -t'
 # Creates a new named session (example: tn portal)
 alias tn='tmux new -s'
+
+# dotfile git commands
+alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
+
 
 # git abbreviations
 abbr -a gd "git diff -M"
@@ -38,14 +43,11 @@ abbr -a gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 abbr -a glv "git log --stat"
 abbr -a gpom "git pull origin master"
 
-# dotfile git commands
-abbr -a config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
-
 set -gx EDITOR nvim
 
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
-set -gx PATH ~/local/bin $PATH
+set -gx PATH ~/.local/bin $PATH
 set -gx PATH /usr/local/bin $PATH
 
 set -g GOPATH ~/go

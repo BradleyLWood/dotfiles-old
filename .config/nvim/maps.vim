@@ -1,5 +1,13 @@
 " Description: Keymaps
 
+nnoremap <SPACE> <Nop>
+let mapleader=' ' 
+"let mapleader=',' 
+
+nnoremap / /\v
+vnoremap / /\v
+map <leader><space> :let @/=''<cr> " clear search
+
 nnoremap <S-C-p> "0p
 " Delete without yank
 nnoremap <leader>d "_d
@@ -30,16 +38,14 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-"-----------------------------
-" Tabs
+" Tabs ======================================================
 
 " Open current directory
 nmap te :tabedit 
 nmap <S-Tab> :tabprev<Return>
 nmap <Tab> :tabnext<Return>
 
-"------------------------------
-" Windows
+" Windows ===================================================
 
 " Split window
 nmap ss :split<Return><C-w>w
@@ -64,8 +70,13 @@ nnoremap k gk
 
 nnoremap gV `[V`]
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" numberline controls
+nmap <C-N><C-N> :set number!<CR>
+nmap <C-M><C-M> :set relativenumber!<CR>
 
+nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
+
+nnoremap <leader>r :RnvimrToggle<CR>

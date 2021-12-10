@@ -1,3 +1,7 @@
+runtime ./maps.vim
+runtime ./plug.vim
+runtime ./which-key.vim
+
 filetype plugin indent on
 syntax on
 
@@ -12,11 +16,9 @@ colorscheme nord
 
 set nowrap
 set ruler
-set number
+set relativenumber
 set numberwidth=5
 set cursorline
-nmap <C-N><C-N> :set number!<CR>
-nmap <C-M><C-M> :set relativenumber!<CR>
 
 set visualbell
 
@@ -34,16 +36,11 @@ set showcmd
 
 set wildmenu
 
-nnoremap / /\v
-vnoremap / /\v
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 set showmatch
-let mapleader = ' ' 
-map <leader><space> :let @/=''<cr> " clear search
-
 
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
@@ -89,7 +86,6 @@ nnoremap <Leader>b :ls<CR>:b<Space>
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\ 
 
-runtime ./maps.vim
-runtime ./plug.vim
-runtime ./which-key.vim
+" Make Ranger replace netrw and be the file explorer
+let g:rnvimr_ex_enable = 1
 
