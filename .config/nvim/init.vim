@@ -11,6 +11,7 @@ set noshowmode
 
 set nowrap
 set ruler
+set number
 set relativenumber
 set numberwidth=5
 set cursorline

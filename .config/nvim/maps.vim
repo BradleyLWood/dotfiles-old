@@ -51,22 +51,30 @@ nmap <Tab> :tabnext<Return>
 " Windows ===================================================
 
 " Split window
+" Split horizontal
 nmap ss :split<Return><C-w>w
+" Split vertical
 nmap sv :vsplit<Return><C-w>w
+
 " Move window
-map s<left> <C-w>h
-map s<up> <C-w>k
-map s<down> <C-w>j
-map s<right> <C-w>l
+" Move to split on the left
 map sh <C-w>h
-map sk <C-w>k
+" Move to split on the below
 map sj <C-w>j
+" Move to split on the above
+map sk <C-w>k
+" Move to split on the right
 map sl <C-w>l
+
 " Resize window
-nmap <C-w><left> <C-w><
-nmap <C-w><right> <C-w>>
-nmap <C-w><up> <C-w>+
-nmap <C-w><down> <C-w>-
+" Increase split's width
+nmap <C-w><C-h> <C-w>5>
+" Increase split's height
+nmap <C-w><C-j> <C-w>5+
+" Decrease split's height
+nmap <C-w><C-k> <C-w>5-
+" Decrease split's width
+nmap <C-w><C-l> <C-w>5<
 
 " Better wrapped navigation
 nnoremap j gj
@@ -78,9 +86,7 @@ nnoremap gV `[V`]
 nmap <C-N><C-N> :set number!<CR>
 nmap <C-M><C-M> :set relativenumber!<CR>
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-"nnoremap <C-n> :NERDTree<CR>
-"nnoremap <C-t> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
 
 nnoremap <leader>r :RnvimrToggle<CR>
