@@ -57,7 +57,7 @@ myManageHook = composeAll
 
 --------------------------------------------------------------------------------
 
-myLayout = avoidStruts $ withSpaces tiled ||| withSpaces (Mirror tiled ) ||| noBorders Full
+myLayout = avoidStruts $ withSpaces tiled ||| noBorders Full ||| withSpaces (Mirror tiled )
   where
     tiled   = Tall nmaster delta ratio
     nmaster = 1
