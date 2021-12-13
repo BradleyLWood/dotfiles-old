@@ -1,6 +1,6 @@
 set fish_greeting ""
 
-set -gx TERM xterm-256color
+#set -gx TERM xterm-256color
 
 # Commands to run in interactive sessions can go here
 fish_vi_key_bindings
