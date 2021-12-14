@@ -86,6 +86,8 @@ lua require('lsp')
 " Telescope configuration
 lua require('telescope-config')
 
+lua require('autopairs')
+
 " Themes
 set termguicolors
 set background=dark

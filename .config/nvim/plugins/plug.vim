@@ -3,7 +3,8 @@ call plug#begin('~/.vim/plugged')
 	" ===========================================================
 	" Color Schemes =============================================
 	Plug 'itchyny/lightline.vim' 
-	Plug 'arcticicestudio/nord-vim'
+	"Plug 'arcticicestudio/nord-vim'
+	Plug 'shaunsingh/nord.nvim'
 	Plug 'lifepillar/vim-solarized8'
 
 	" Git =======================================================
@@ -47,4 +48,5 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'vim-syntastic/syntastic'
 	Plug 'vimwiki/vimwiki'
+	Plug 'windwp/nvim-autopairs'
 call plug#end()
