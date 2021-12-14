@@ -157,5 +157,6 @@
 	],
 	"projectManager.git.baseFolders": [
 		"~/code"
-	]
+	],
+	"security.workspace.trust.untrustedFiles": "open"
 }
