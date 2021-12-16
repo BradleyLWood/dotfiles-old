@@ -150,8 +150,8 @@ vnoremap <silent> # :<C-U>
 " Tabs and Buffers ==========================================
 
 nmap <leader>te :tabedit 
-nmap <silent><leader>tj :tabnext<CR>
-nmap <silent><leader>tk :tabprev<CR>
+"nmap <silent><leader>tj :tabnext<CR>
+"nmap <silent><leader>tk :tabprev<CR>
 nmap <silent><leader>l :tabnext<CR>
 nmap <silent><leader>h :tabprev<CR>
 nmap <silent><Tab> :tabnext<CR>
@@ -163,7 +163,7 @@ nmap <silent><leader>bk :bPrev<CR>
 
 " Split window
 " Split horizontal
-nmap <leader>sh :split<Return><C-w>w
+nmap <leader>ss :split<Return><C-w>w
 " Split vertical
 nmap <leader>sv :vsplit<Return><C-w>w
 
