@@ -11,6 +11,7 @@ fish_vi_key_bindings
 #alias la "ls -A"
 #alias ll "ls -l"
 #alias lla "la -A"
+
 alias ls "exa --icons --group-directories-first"
 alias la "ls -a"
 alias ll "ls -l"
@@ -24,8 +25,8 @@ alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
 # dotfile git commands
-alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME '
-
+# use function in functions/dotfiles.fish to get working autocomplete
+#alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
 
 # git abbreviations
 abbr -a gd "git diff -M"
@@ -51,6 +52,8 @@ set -gx EDITOR nvim
 
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
+set -gx PATH ~/code/public_scripts $PATH
+set -gx PATH ~/code/private_scripts $PATH
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH /usr/local/bin $PATH
 
