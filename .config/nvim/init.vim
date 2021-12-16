@@ -147,20 +147,25 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-" Tabs ======================================================
+" Tabs and Buffers ==========================================
 
-" Open current directory
-nmap te :tabedit 
-nmap <S-Tab> :tabprev<Return>
-nmap <Tab> :tabnext<Return>
+nmap <leader>te :tabedit 
+nmap <silent><leader>tj :tabnext<CR>
+nmap <silent><leader>tk :tabprev<CR>
+nmap <silent><leader>l :tabnext<CR>
+nmap <silent><leader>h :tabprev<CR>
+nmap <silent><Tab> :tabnext<CR>
+nmap <silent><S-Tab> :tabprev<CR>
+nmap <silent><leader>bj :bNext<CR>
+nmap <silent><leader>bk :bPrev<CR>
 
 " Windows ===================================================
 
 " Split window
 " Split horizontal
-nmap ss :split<Return><C-w>w
+nmap <leader>sh :split<Return><C-w>w
 " Split vertical
-nmap sv :vsplit<Return><C-w>w
+nmap <leader>sv :vsplit<Return><C-w>w
 
 " Move window
 " Move to split on the left
@@ -182,6 +187,11 @@ nnoremap <C-w><C-k> <C-w>5-
 " Decrease split's width
 nnoremap <C-w><C-l> <C-w>5<
 nnoremap <Leader>rp :resize 100<CR>
+
+nnoremap <C-k> :cnext<CR>zz
+nnoremap <C-j> :cprev<CR>zz
+nnoremap <leader>k :lnext<CR>zz
+nnoremap <leader>j :lprev<CR>zz
 
 " Better wrapped navigation
 nnoremap j gj
@@ -210,10 +220,10 @@ nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap gV `[V`]
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 " numberline controls
 nmap <C-N><C-N> :set number!<CR>
@@ -223,3 +233,8 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
 nnoremap <leader>r :RnvimrToggle<CR>
+
+let g:gitgutter_map_keys = 0
+nmap <leader>gp :GitGutterPreviewHunk<CR>
+nmap <leader>gu :GitGutterUndoHunk<CR>
+nmap <leader>gs :GitGutterStageHunk<CR>
