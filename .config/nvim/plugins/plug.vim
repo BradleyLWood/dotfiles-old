@@ -1,11 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
-	" ===========================================================
 	" Color Schemes =============================================
 	Plug 'itchyny/lightline.vim' 
 	"Plug 'arcticicestudio/nord-vim'
 	Plug 'shaunsingh/nord.nvim'
 	Plug 'lifepillar/vim-solarized8'
+	Plug 'gruvbox-community/gruvbox'
 
 	" Git =======================================================
 	Plug 'airblade/vim-gitgutter'
@@ -19,6 +19,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
+	Plug 'onsails/lspkind-nvim'
+
+	Plug 'glepnir/lspsaga.nvim'
 
 	" Telescope =================================================
 	Plug 'nvim-lua/popup.nvim'
@@ -43,10 +46,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
+	Plug 'ThePrimeagen/harpoon'
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
 	Plug 'vim-syntastic/syntastic'
 	Plug 'vimwiki/vimwiki'
 	Plug 'windwp/nvim-autopairs'
+
 call plug#end()

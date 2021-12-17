@@ -7,7 +7,6 @@ set nocompatible
 
 set noshowmode
 
-
 set nowrap
 set ruler
 set number
@@ -37,6 +36,7 @@ set ignorecase
 set smartcase
 set showmatch
 
+" TODO figure out a better option than tab key
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " Status line
@@ -91,6 +91,7 @@ lua require('autopairs')
 " Themes
 set termguicolors
 set background=dark
+"runtime ./themes/gruvbox.vim
 runtime ./themes/nord.vim
 "runtime ./themes/solarized.vim
 
@@ -150,8 +151,8 @@ vnoremap <silent> # :<C-U>
 " Tabs and Buffers ==========================================
 
 nmap <leader>te :tabedit 
-"nmap <silent><leader>tj :tabnext<CR>
-"nmap <silent><leader>tk :tabprev<CR>
+nmap <silent><leader>tj :tabnext<CR>
+nmap <silent><leader>tk :tabprev<CR>
 nmap <silent><leader>l :tabnext<CR>
 nmap <silent><leader>h :tabprev<CR>
 nmap <silent><Tab> :tabnext<CR>
@@ -188,10 +189,10 @@ nnoremap <C-w><C-k> <C-w>5-
 nnoremap <C-w><C-l> <C-w>5<
 nnoremap <Leader>rp :resize 100<CR>
 
-nnoremap <C-k> :cnext<CR>zz
-nnoremap <C-j> :cprev<CR>zz
-nnoremap <leader>k :lnext<CR>zz
+nnoremap <C-J> :cprev<CR>zz
+nnoremap <C-K> :cnext<CR>zz
 nnoremap <leader>j :lprev<CR>zz
+nnoremap <leader>k :lnext<CR>zz
 
 " Better wrapped navigation
 nnoremap j gj
@@ -235,6 +236,15 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>r :RnvimrToggle<CR>
 
 let g:gitgutter_map_keys = 0
-nmap <leader>gp :GitGutterPreviewHunk<CR>
-nmap <leader>gu :GitGutterUndoHunk<CR>
-nmap <leader>gs :GitGutterStageHunk<CR>
+" TODO figure out better maps since g is more consistent with 'go' and not 'git'
+"nmap <leader>gp :GitGutterPreviewHunk<CR>
+"nmap <leader>gu :GitGutterUndoHunk<CR>
+"nmap <leader>gs :GitGutterStageHunk<CR>
+
+nnoremap <silent><leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <silent><leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <silent><leader>tc :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
+nnoremap <silent><C-h> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <silent><C-j> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <silent><C-k> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <silent><C-l> :lua require("harpoon.ui").nav_file(4)<CR>
