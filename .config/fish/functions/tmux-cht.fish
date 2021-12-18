@@ -19,13 +19,4 @@ function tmux-cht
 	else
 		tmux neww fish -c "curl -s cht.sh/$selected~$query | less"
 	end
-
-   0   echo $selected & read -l -P 'Enter Query: ' query
-   1   set query (echo $query | tr ' ' '+')
-   2
-   3   if grep -qs $selected $languages
-   4     tmux neww fish -c "curl -s cht.sh/$selected/$query ; read -P 'Enter to close'"
-   5   else
-   6     tmux neww fish -c "curl -s cht.sh/$selected~$query | less"
-   7   end
 end
