@@ -18,11 +18,13 @@ alias ll "ls -l"
 alias lla "la -l"
 
 # Attach tmux to a session if one exists, otherwise creates one
-alias t="tmux -u attach || tmux -u new"
+alias t "tmux -u attach || tmux -u new"
 # Attaches tmux to a session (example: ta portal)
-alias ta='tmux attach -t'
+alias ta "tmux attach -t"
 # Creates a new named session (example: tn portal)
-alias tn='tmux new -s'
+alias tn "tmux new -s"
+# List all sessions
+alias tl "tmux list-sessions"
 
 # dotfile git commands
 # use function in functions/dotfiles.fish to get working autocomplete
