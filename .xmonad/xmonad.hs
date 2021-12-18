@@ -28,6 +28,7 @@ main = do
             , normalBorderColor  = myNormalBorderColor
             , focusedBorderColor = myFocusedBorderColor
             , focusFollowsMouse  = myFocusFollowsMouse
+						, clickJustFocuses   = myClickJustFocuses
             , logHook            = dynamicLogWithPP $ myXmobarPP xmproc
             }
           `additionalKeysP`
@@ -42,6 +43,8 @@ main = do
 myTerminal      = "alacritty"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
+myClickJustFocuses  :: Bool
+myClickJustFocuses  = False
 myBorderWidth   = 2
 myNormalBorderColor  = "#434C5E"
 myFocusedBorderColor = "#B48EAD"
