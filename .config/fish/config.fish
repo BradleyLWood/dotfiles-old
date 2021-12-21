@@ -7,6 +7,8 @@ fish_vi_key_bindings
 
 # Aliases
 
+alias v nvim
+
 #alias ls "ls -hpG --group-directories-first --color"
 #alias la "ls -A"
 #alias ll "ls -l"
