@@ -1,17 +1,12 @@
 call plug#begin('~/.vim/plugged')
-
+	
 	" Color Schemes =============================================
 	Plug 'itchyny/lightline.vim' 
-	"Plug 'arcticicestudio/nord-vim'
-	Plug 'shaunsingh/nord.nvim'
-	Plug 'lifepillar/vim-solarized8'
 	Plug 'gruvbox-community/gruvbox'
-
-	" Git =======================================================
-	Plug 'airblade/vim-gitgutter'
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-rhubarb'
-
+	Plug 'joshdick/onedark.vim'
+	Plug 'lifepillar/vim-solarized8'
+	Plug 'shaunsingh/nord.nvim'
+	
 	" LSP =======================================================
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/cmp-nvim-lsp'
@@ -20,39 +15,42 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
 	Plug 'onsails/lspkind-nvim'
-
-	Plug 'glepnir/lspsaga.nvim'
-
+	Plug 'ray-x/lsp_signature.nvim'
+	Plug 'L3MON4D3/LuaSnip'
+	
+	" Git =======================================================
+	Plug 'lewis6991/gitsigns.nvim'
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-rhubarb'
+	
 	" Telescope =================================================
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
+	
 	" Treesitter=================================================
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'nvim-treesitter/playground'
 	
 	" Tools =====================================================
-	Plug 'frazrepo/vim-rainbow'
-	Plug 'dense-analysis/ale'
-	Plug 'kevinhwang91/rnvimr'
 	Plug 'kshenoy/vim-signature'
+	Plug 'kyazdani42/nvim-web-devicons' " for file icons
+	Plug 'kyazdani42/nvim-tree.lua'
 	Plug 'liuchengxu/vim-which-key'
+	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'mattn/emmet-vim'
 	Plug 'mbbill/undotree'
 	Plug 'norcalli/nvim-colorizer.lua'
-	Plug 'rbgrouleff/bclose.vim'
+	Plug 'Pocco81/TrueZen.nvim'
 	Plug 'sbdchd/neoformat'
-	Plug 'scrooloose/nerdtree'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 	Plug 'ThePrimeagen/harpoon'
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
-	Plug 'vim-syntastic/syntastic'
 	Plug 'vimwiki/vimwiki'
+	Plug 'voldikss/vim-floaterm'
 	Plug 'windwp/nvim-autopairs'
-
+	
 call plug#end()

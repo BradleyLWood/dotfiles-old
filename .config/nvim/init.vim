@@ -13,14 +13,15 @@ set number
 set relativenumber
 set numberwidth=5
 set cursorline
+"set colorcolumn=73
 
 set visualbell
 
 set encoding=utf-8
 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set scrolloff=3
 set backspace=indent,eol,start
 
@@ -36,8 +37,7 @@ set ignorecase
 set smartcase
 set showmatch
 
-" TODO figure out a better option than tab key
-"imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " Status line
 function! GitBranch()
@@ -76,23 +76,20 @@ map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\ 
 
-" Make Ranger replace netrw and be the file explorer
-let g:rnvimr_ex_enable = 1
-
-" LSP configuration
 set completeopt=menu,menuone,noselect
-lua require('lsp')
-
-" Telescope configuration
+lua require('lsp-config.servers')
+lua require('lsp-config.autocomplete')
 lua require('telescope-config')
-
-lua require('autopairs')
+lua require('nvim-tree-config')
+lua require('autopairs-config') 
+lua require('gitsigns-config')
 
 " Themes
 set termguicolors
 set background=dark
 "runtime ./themes/gruvbox.vim
 runtime ./themes/nord.vim
+"runtime ./themes/onedark.vim
 "runtime ./themes/solarized.vim
 
 " ===========================================================
@@ -155,8 +152,8 @@ nmap <silent><leader>tj :tabnext<CR>
 nmap <silent><leader>tk :tabprev<CR>
 nmap <silent><leader>l :tabnext<CR>
 nmap <silent><leader>h :tabprev<CR>
-nmap <silent><Tab> :tabnext<CR>
-nmap <silent><S-Tab> :tabprev<CR>
+"nmap <silent><Tab> :tabnext<CR>
+"nmap <silent><S-Tab> :tabprev<CR>
 nmap <silent><leader>bj :bNext<CR>
 nmap <silent><leader>bk :bPrev<CR>
 
@@ -235,7 +232,7 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 
 nnoremap <leader>r :RnvimrToggle<CR>
 
-let g:gitgutter_map_keys = 0
+"let g:gitgutter_map_keys = 0
 " TODO figure out better maps since g is more consistent with 'go' and not 'git'
 "nmap <leader>gp :GitGutterPreviewHunk<CR>
 "nmap <leader>gu :GitGutterUndoHunk<CR>
@@ -248,3 +245,8 @@ nnoremap <silent><C-h> :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <silent><C-j> :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <silent><C-k> :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <silent><C-l> :lua require("harpoon.ui").nav_file(4)<CR>
+
+" NvimTree maps
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
