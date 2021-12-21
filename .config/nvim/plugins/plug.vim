@@ -44,7 +44,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'Pocco81/TrueZen.nvim'
 	Plug 'sbdchd/neoformat'
-	Plug 'scrooloose/nerdcommenter'
 	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 	Plug 'ThePrimeagen/harpoon'
 	Plug 'tpope/vim-commentary'
