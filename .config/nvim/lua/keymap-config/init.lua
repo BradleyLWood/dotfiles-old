@@ -47,7 +47,7 @@ map('n', '<Leader>tk', ':tabprev<CR>', opts)
 map('n', '<Tab>', ':tabnext<CR>', opts)
 map('n', '<S-Tab>', ':tabprev<CR>', opts)
 
--- Splits
+-- Windows
 map('n', '<Leader>sv', ':vsplit<CR><C-w>w', opts)
 map('n', '<Leader>ss', ':split<CR><C-w>w', opts)
 map('n', 'sh', '<C-w>h', opts)
@@ -55,7 +55,7 @@ map('n', 'sj', '<C-w>j', opts)
 map('n', 'sk', '<C-w>k', opts)
 map('n', 'sl', '<C-w>l', opts)
 
--- Resize splits
+-- Resize windows
 map('n', '<C-w><C-h>', '<C-w>5>', opts)
 map('n', '<C-w><C-j>', '<C-w>5+', opts)
 map('n', '<C-w><C-k>', '<C-w>5-', opts)
@@ -63,11 +63,11 @@ map('n', '<C-w><C-l>', '<C-w>5<', opts)
 map('n', '<Leader>rp', ':resize 100<CR>', opts)
 
 -- Navigate quick fix list
-map('n', '<C-J>', 'cprev<CR>zz', opts)
-map('n', '<C-K>', 'cnext<CR>zz', opts)
+map('n', '<C-J>', 'cnext<CR>zz', opts)
+map('n', '<C-K>', 'cprev<CR>zz', opts)
 -- Navigate local list
-map('n', '<Leader>j', ':lprev<CR>zz', opts)
-map('n', '<Leader>k', ':lnext<CR>zz', opts)
+map('n', '<Leader>j', ':lnext<CR>zz', opts)
+map('n', '<Leader>k', ':lprev<CR>zz', opts)
 
 map('v', 'J', ':m \'>+1<CR>gv=gv', opts) -- Move line down
 map('v', 'K', ':m \'<-2<CR>gv=gv', opts) -- Move line up
@@ -97,13 +97,13 @@ map('n', '<Leader>fb', ':Telescope buffers<CR>', opts)
 map('n', '<Leader>fh', ':Telescope help_tags<CR>', opts)
 
 -- Harpoon
-map('n', '<Leader>a', ':lua require("harpoon.mark").add_file()<CR>', opts)
-map('n', '<Leader>hl', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
-map('n', '<Leader>hc', ':lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>', opts)
-map('n', '<C-h>', ':lua require("harpoon.ui").nav_file(1)<CR>', opts)
-map('n', '<C-j>', ':lua require("harpoon.ui").nav_file(2)<CR>', opts)
-map('n', '<C-k>', ':lua require("harpoon.ui").nav_file(3)<CR>', opts)
-map('n', '<C-l>', ':lua require("harpoon.ui").nav_file(4)<CR>', opts)
+map('n', '<Leader>a', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true })
+map('n', '<Leader>hl', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true })
+map('n', '<Leader>hc', ':lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>', { noremap = true })
+map('n', '<C-h>', ':lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true })
+map('n', '<C-j>', ':lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true })
+map('n', '<C-k>', ':lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true })
+map('n', '<C-l>', ':lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true })
 
 -- NvimTree
 map('n', '<Leader>nt', ':NvimTreeToggle<CR>', opts)		-- NvimTree
