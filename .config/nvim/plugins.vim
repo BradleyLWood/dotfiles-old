@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 	
 	" Color Schemes =============================================
-	Plug 'itchyny/lightline.vim' 
+	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'gruvbox-community/gruvbox'
 	Plug 'joshdick/onedark.vim'
 	Plug 'lifepillar/vim-solarized8'
@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lewis6991/gitsigns.nvim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-rhubarb'
+	Plug 'mattn/vim-gist'
+	Plug 'mattn/webapi-vim'
 	
 	" Telescope =================================================
 	Plug 'nvim-lua/popup.nvim'
@@ -34,10 +36,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'nvim-treesitter/playground'
 	
 	" Tools =====================================================
+	Plug 'ellisonleao/glow.nvim'
 	Plug 'kshenoy/vim-signature'
 	Plug 'kyazdani42/nvim-web-devicons' " for file icons
 	Plug 'kyazdani42/nvim-tree.lua'
-	Plug 'liuchengxu/vim-which-key'
+	Plug 'folke/which-key.nvim'
 	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'mattn/emmet-vim'
 	Plug 'mbbill/undotree'
