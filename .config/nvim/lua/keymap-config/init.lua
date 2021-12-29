@@ -62,12 +62,16 @@ map('n', '<C-w><C-k>', '<C-w>5-', opts)
 map('n', '<C-w><C-l>', '<C-w>5<', opts)
 map('n', '<Leader>rp', ':resize 100<CR>', opts)
 
+
+-- Quick fix list
+map('n', '<C-q>', ':call ToggleQFList(1)<CR>', opts)
+map('n', '<leader>q', ':call ToggleQFList(0)<CR>', opts)
 -- Navigate quick fix list
-map('n', '<C-J>', 'cnext<CR>zz', opts)
-map('n', '<C-K>', 'cprev<CR>zz', opts)
+map('n', '<Leader>j', 'cnext<CR>z.', opts)
+map('n', '<Leader>k', 'cprev<CR>z.', opts)
 -- Navigate local list
-map('n', '<Leader>j', ':lnext<CR>zz', opts)
-map('n', '<Leader>k', ':lprev<CR>zz', opts)
+map('n', '<Leader>lj', ':lnext<CR>zz', opts)
+map('n', '<Leader>lk', ':lprev<CR>zz', opts)
 
 map('v', 'J', ':m \'>+1<CR>gv=gv', opts) -- Move line down
 map('v', 'K', ':m \'<-2<CR>gv=gv', opts) -- Move line up

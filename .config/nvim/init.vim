@@ -10,6 +10,7 @@ runtime ./themes/nord.vim
 " Load Lua Scripts ==========================================
 lua require('lsp-config.servers')
 lua require('lsp-config.autocomplete')
+lua require('luasnip-config')
 lua require('telescope-config')
 lua require('treesitter-config')
 lua require('nvim-tree-config')

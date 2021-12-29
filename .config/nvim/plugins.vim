@@ -17,6 +17,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'onsails/lspkind-nvim'
 	Plug 'ray-x/lsp_signature.nvim'
 	Plug 'L3MON4D3/LuaSnip'
+	"Plug 'saadparwaiz1/cmp_luasnip'
+	Plug 'rafamadriz/friendly-snippets'
 	
 	" Git =======================================================
 	Plug 'lewis6991/gitsigns.nvim'
@@ -47,6 +49,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'Pocco81/TrueZen.nvim'
 	Plug 'sbdchd/neoformat'
+	Plug 'simrat39/symbols-outline.nvim'
 	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 	Plug 'ThePrimeagen/harpoon'
 	Plug 'tpope/vim-commentary'
