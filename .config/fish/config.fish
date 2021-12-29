@@ -4,6 +4,7 @@ set fish_greeting ""
 
 # Commands to run in interactive sessions can go here
 fish_vi_key_bindings
+fish_user_vi_key_bindings
 
 # Aliases
 
@@ -13,7 +14,6 @@ alias v nvim
 #alias la "ls -A"
 #alias ll "ls -l"
 #alias lla "la -A"
-
 alias ls "exa --icons --group-directories-first"
 alias la "ls -a"
 alias ll "ls -l"
