@@ -28,6 +28,12 @@ alias tn "tmux new -s"
 # List all sessions
 alias tl "tmux list-sessions"
 
+# Ranger
+alias r "ranger"
+
+# Pacman
+alias p "pacman"
+
 # dotfile git commands
 # use function in functions/dotfiles.fish to get working autocomplete
 #alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
@@ -58,6 +64,7 @@ set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/code/public_scripts $PATH
 set -gx PATH ~/code/private_scripts $PATH
+set -gx PATH ~/.yarn/bin $PATH
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH /usr/local/bin $PATH
 
