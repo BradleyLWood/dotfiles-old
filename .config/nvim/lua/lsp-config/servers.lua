@@ -1,29 +1,66 @@
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
-local source_mapping = {
-	buffer = "[Buffer]",
-	nvim_lsp = "[LSP]",
-	nvim_lua = "[Lua]",
-	path = "[Path]",
-}
+
 local lspkind = require('lspkind')
-require('lspkind').init({
-	with_text = true,
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
+lspkind.init({
+    symbol_map = kind_icons
 })
 
 -- Luasnip
 local luasnip = require('luasnip')
+require("luasnip.loaders.from_vscode").lazy_load()
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end	
 
 cmp.setup({
+	formatting = {
+		format = lspkind.cmp_format {
+			with_text = true,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[lsp]",
+				nvim_lua = "[api]",
+				path = "[path]",
+				luasnip = "[snip]",
+				gh_issues = "[issues]",
+			},
+		},
+	},
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			require('luasnip').lsp_expand(args.body)
 		end,
 	},
 	mapping = {
@@ -66,12 +103,6 @@ cmp.setup({
 	})
 })
 
-
-
-
-
-
-
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
 	sources = {
@@ -88,6 +119,7 @@ cmp.setup.cmdline(':', {
 })
 
 local nvim_lsp = require('lspconfig')
+local configs = require'lspconfig.configs'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -115,6 +147,21 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 	buf_set_keymap('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
+end
+
+-- Emmet configuration
+if not configs.ls_emmet then    
+	configs.ls_emmet = {
+		default_config = {
+			cmd = { 'ls_emmet', '--stdio' };
+			filetypes = { 'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'haml',
+				'xml', 'xsl', 'pug', 'slim', 'sass', 'stylus', 'less', 'sss'};
+			root_dir = function(fname)
+				return vim.loop.cwd()
+			end;
+			settings = {};
+		};
+	}
 end
 
 require'lspconfig'.html.setup{
@@ -162,6 +209,16 @@ require'lspconfig'.eslint.setup{
 	on_attach = on_attach
 }
 
+require'lspconfig'.ls_emmet.setup{
+	capabilities = capabilities,
+	on_attach = on_attach
+}
+
+require'lspconfig'.tailwindcss.setup{
+	capabilities = capabilities,
+	on_attach = on_attach
+}
+
 -- TODO not working
 -- require'lspconfig'.hsl.setup({
 -- 	capabilities = capabilities,
@@ -174,22 +231,17 @@ require'lspconfig'.eslint.setup{
 -- 	}
 -- })
 
-local snippets_paths = function()
-	local plugins = { "friendly-snippets" }
-	local paths = {}
-	local path
-	local root_path = vim.env.HOME .. "/.vim/plugged/"
-	for _, plug in ipairs(plugins) do
-		path = root_path .. plug
-		if vim.fn.isdirectory(path) ~= 0 then
-			table.insert(paths, path)
-		end
-	end
-	return paths
-end
+--local snippets_paths = function()
+--	local plugins = { "friendly-snippets" }
+--	local paths = {}
+--	local path
+--	local root_path = vim.env.HOME .. "/.vim/plugged/"
+--	for _, plug in ipairs(plugins) do
+--		path = root_path .. plug
+--		if vim.fn.isdirectory(path) ~= 0 then
+--			table.insert(paths, path)
+--		end
+--	end
+--	return paths
+--end
 
-require("luasnip.loaders.from_vscode").lazy_load({
-	paths = snippets_paths(),
-	include = nil, -- Load all languages
-	exclude = {},
-})

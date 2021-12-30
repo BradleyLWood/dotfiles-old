@@ -36,8 +36,6 @@ opt.smartcase = true								-- ignore case only for searches that don't have cap
 opt.showmatch = true								-- highlight matching brace, quote, etc.
 opt.background = 'dark'								-- use dark variant of the colorscheme
 
-g.user_emmet_install_global = 0
-
 g.gist_clip_command = 'xclip -selection clipboard'	-- Use xclip for gists
 
 g.vimwiki_list = {{									-- vimwiki settings
@@ -55,5 +53,5 @@ cmd [[set iskeyword+=-]]
 -- Vimscript I don't know how to convert to lua
 vim.api.nvim_exec([[
 	filetype plugin indent on
-	autocmd FileType html,css EmmetInstall
+	autocmd FileType html,css,jsx,tsx EmmetInstall
 ]], false)

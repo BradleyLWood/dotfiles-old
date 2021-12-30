@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hrsh7th/nvim-cmp'
 	Plug 'onsails/lspkind-nvim'
 	Plug 'ray-x/lsp_signature.nvim'
+	Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'L3MON4D3/LuaSnip'
 	"Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'rafamadriz/friendly-snippets'

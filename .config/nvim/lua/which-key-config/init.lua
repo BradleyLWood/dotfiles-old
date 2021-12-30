@@ -39,7 +39,7 @@ wk.register({
 		-- Harpoon
 		a = { "Mark harpoon file" },
 		h = { 
-			name = "Harpoon",
+			name = "Harpoon & GitSigns",
 			l = { "Harpoon file menu" },
 			c = { "Harpoon command menu" },
 		},
