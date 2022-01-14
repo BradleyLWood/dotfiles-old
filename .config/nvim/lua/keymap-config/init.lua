@@ -21,6 +21,7 @@ map('n', '<Leader>md', ':InstantMarkdownPreview<CR>', opts)
 map('n', '<Leader>ms', ':InstantMarkdownStop<CR>', opts)
 
 map('n', 'Q', '<Nop>', opts) -- Disable Q ex mode
+map('n', 'gf', '<Nop>', opts) -- Disable go to file
 
 map('n', '<Leader>u', ':UndotreeShow<CR>', opts) -- UndotreeShow
 
@@ -37,8 +38,8 @@ map('n', '+', '<C-a', opts) -- Increment number
 map('n', '-', '<C-x', opts) -- Decrement number
 
 -- Buffers
-map('n', '<Leader>bj', ':bNext<CR>', opts)
-map('n', '<Leader>bk', ':bPrev<CR>', opts)
+map('n', '<Leader>bj', ':bnext<CR>', opts)
+map('n', '<Leader>bk', ':bprevious<CR>', opts)
 
 -- Tabs
 map('n', '<Leader>te', ':tabedit', opts)

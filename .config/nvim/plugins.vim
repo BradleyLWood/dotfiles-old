@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ray-x/lsp_signature.nvim'
 	Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'L3MON4D3/LuaSnip'
-	"Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'rafamadriz/friendly-snippets'
 	
 	" Git =======================================================
@@ -33,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-telescope/telescope-fzy-native.nvim'
+	Plug 'nvim-telescope/telescope-file-browser.nvim'
 	
 	" Treesitter=================================================
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -40,13 +40,14 @@ call plug#begin('~/.vim/plugged')
 	
 	" Tools =====================================================
 	Plug 'ellisonleao/glow.nvim'
-	Plug 'kshenoy/vim-signature'
-	Plug 'kyazdani42/nvim-web-devicons' " for file icons
-	Plug 'kyazdani42/nvim-tree.lua'
 	Plug 'folke/which-key.nvim'
+	Plug 'kshenoy/vim-signature'
+	Plug 'kyazdani42/nvim-tree.lua'
+	Plug 'kyazdani42/nvim-web-devicons' " for file icons
 	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'mattn/emmet-vim'
 	Plug 'mbbill/undotree'
+	Plug 'NTBBloodbath/rest.nvim'
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'Pocco81/TrueZen.nvim'
 	Plug 'sbdchd/neoformat'
