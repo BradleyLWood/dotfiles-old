@@ -34,7 +34,8 @@ main = do
           `additionalKeysP`
             [ ("M-S-z", spawn "xscreensaver-command -lock")
             , ("M-S-=", unGrab *> spawn "scrot -s"        )
-            , ("M-p", spawn "rofi -show combi -modi combi")
+            , ("M-p", spawn "rofi -show drun -modi")
+            , ("M-S-p", spawn "rofi -show window -modi")
             , ("M-b", sendMessage ToggleStruts)
             ]
 
@@ -60,7 +61,7 @@ myManageHook = composeAll
 
 --------------------------------------------------------------------------------
 
-myLayout = avoidStruts $ withSpaces tiled ||| noBorders Full ||| withSpaces (Mirror tiled )
+myLayout = avoidStruts $ noBorders Full ||| withSpaces tiled ||| tiled ||| withSpaces (Mirror tiled ) ||| Mirror tiled
   where
     tiled   = Tall nmaster delta ratio
     nmaster = 1

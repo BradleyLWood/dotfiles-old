@@ -14,6 +14,7 @@ opt.cursorline = true								-- highlight current row
 opt.tabstop = 4										-- tab width
 opt.shiftwidth = 4									-- indentation width
 opt.softtabstop = 4									-- tab and backspace add and remove this much
+opt.expandtab = true								-- use spaces
 opt.wrap = false									-- don't wrap text
 opt.backspace = {'indent', 'eol', 'start'}			-- don't block backspacing
 opt.scrolloff = 3									-- leave 3 rows when scrolling by pages, etc.

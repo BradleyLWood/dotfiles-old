@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'L3MON4D3/LuaSnip'
 	Plug 'rafamadriz/friendly-snippets'
+	Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 	
 	" Git =======================================================
 	Plug 'lewis6991/gitsigns.nvim'
@@ -40,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 	
 	" Tools =====================================================
 	Plug 'ellisonleao/glow.nvim'
+	"Plug 'evanleck/vim-svelte', {'branch': 'main'}
 	Plug 'folke/which-key.nvim'
 	Plug 'kshenoy/vim-signature'
 	Plug 'kyazdani42/nvim-tree.lua'

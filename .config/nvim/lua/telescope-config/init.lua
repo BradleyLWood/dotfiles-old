@@ -60,3 +60,12 @@ telescope.setup {
 telescope.load_extension("fzy_native")
 telescope.load_extension("file_browser")
 
+local M = {}
+M.search_vimrc = function()
+	require("telescope.builtin").find_files({
+		prompt_title = "< VimRC >",
+		cwd = "~/.config/nvim/",
+	})
+end
+
+return M

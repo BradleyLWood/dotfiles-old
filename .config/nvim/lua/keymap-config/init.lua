@@ -40,13 +40,15 @@ map('n', '-', '<C-x', opts) -- Decrement number
 -- Buffers
 map('n', '<Leader>bj', ':bnext<CR>', opts)
 map('n', '<Leader>bk', ':bprevious<CR>', opts)
+map('n', '<Leader>bl', ':buffers<CR>', opts)
+map('n', '<Leader>bd', ':bdelete<CR>', opts)
 
 -- Tabs
 map('n', '<Leader>te', ':tabedit', opts)
 map('n', '<Leader>tj', ':tabnext<CR>', opts)
 map('n', '<Leader>tk', ':tabprev<CR>', opts)
-map('n', '<Tab>', ':tabnext<CR>', opts)
-map('n', '<S-Tab>', ':tabprev<CR>', opts)
+--map('n', '<Tab>', ':tabnext<CR>', opts)
+--map('n', '<S-Tab>', ':tabprev<CR>', opts)
 
 -- Windows
 map('n', '<Leader>sv', ':vsplit<CR><C-w>w', opts)
@@ -63,13 +65,12 @@ map('n', '<C-w><C-k>', '<C-w>5-', opts)
 map('n', '<C-w><C-l>', '<C-w>5<', opts)
 map('n', '<Leader>rp', ':resize 100<CR>', opts)
 
-
 -- Quick fix list
 map('n', '<C-q>', ':call ToggleQFList(1)<CR>', opts)
 map('n', '<leader>q', ':call ToggleQFList(0)<CR>', opts)
 -- Navigate quick fix list
-map('n', '<Leader>j', 'cnext<CR>z.', opts)
-map('n', '<Leader>k', 'cprev<CR>z.', opts)
+map('n', '<Leader>j', ':cnext<CR>z.', opts)
+map('n', '<Leader>k', ':cprev<CR>z.', opts)
 -- Navigate local list
 map('n', '<Leader>lj', ':lnext<CR>zz', opts)
 map('n', '<Leader>lk', ':lprev<CR>zz', opts)
@@ -94,12 +95,13 @@ map('i', '?', '?<C-g>u', opts)
 map('n', 'gV', '`[V`]', opts) -- Select recently pasted
 
 -- Telescope
-map('n', '<Leader>ff', ':Telescope find_files<CR>', opts)
-map('n', '<Leader>fd', ':Telescope file_browser<CR>', opts)
-map('n', '<Leader>fr', ':Telescope oldfiles<CR>', opts)
-map('n', '<Leader>fg', ':Telescope live_grep<CR>', opts)
-map('n', '<Leader>fb', ':Telescope buffers<CR>', opts)
-map('n', '<Leader>fh', ':Telescope help_tags<CR>', opts)
+map('n', '<Leader>ff',	':Telescope find_files<CR>', opts)
+map('n', '<Leader>fd',	':Telescope file_browser<CR>', opts)
+map('n', '<Leader>fr',	':Telescope oldfiles<CR>', opts)
+map('n', '<Leader>fg',	':Telescope live_grep<CR>', opts)
+map('n', '<Leader>fb',	':Telescope buffers<CR>', opts)
+map('n', '<Leader>fh',	':Telescope help_tags<CR>', opts)
+map('n', '<Leader>vrc',	':lua require("telescope-config").search_vimrc()<CR>', opts)
 
 -- Harpoon
 map('n', '<Leader>a', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true })

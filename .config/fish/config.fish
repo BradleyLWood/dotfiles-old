@@ -27,24 +27,27 @@ alias ta "tmux attach -t"
 alias tn "tmux new -s"
 # List all sessions
 alias tl "tmux list-sessions"
+# Create tmux session for nvim configuration
+alias vconfig "tmux new-session -d -s nvim -c ~/.config/nvim/ \; switchc -t nvim"
 
 # Ranger
 alias r "ranger"
 
 # Pacman
-alias p "pacman"
+abbr -a p "sudo pacman"
 
 # dotfile git commands
 # use function in functions/dotfiles.fish to get working autocomplete
 #alias config 'git --git-dir=$HOME/.cfgrepo --work-tree=$HOME'
 
 # git abbreviations
-abbr -a gd "git diff -M"
+abbr -a gd "git difftool"
 abbr -a ga "git add"
 abbr -a gaa "git add --all ."
 abbr -a gbd "git branch -D"
 abbr -a gs "git status"
-abbr -a gca "git commit -a -m"
+abbr -a gc "git commit"
+abbr -a gca "git commit -a"
 abbr -a gm "git merge --no-ff"
 abbr -a gpt "git push --tags"
 abbr -a gp "git push"
