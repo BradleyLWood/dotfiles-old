@@ -7,8 +7,8 @@
 set $mod Mod4
 
 # Titlebar font
-font pango:Fira Code 12
-#font pango:Fira Code 0
+#font pango:Fira Code 12
+font pango:Fira Code 0
 
 # Focus follows mouse
 focus_follows_mouse no
