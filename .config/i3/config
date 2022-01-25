@@ -7,8 +7,8 @@
 set $mod Mod4
 
 # Titlebar font
-#font pango:Fira Code 12
-font pango:Fira Code 0
+font pango:Fira Code 12
+#font pango:Fira Code 0
 
 # Focus follows mouse
 focus_follows_mouse no
@@ -21,8 +21,8 @@ focus_follows_mouse no
 # Border
 ################################################################################
 
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 hide_edge_borders smart
 
 
@@ -202,7 +202,7 @@ workspace 3 output DVI-D-0
 # Gaps
 ################################################################################
 
-#for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 20
 gaps outer 1
 smart_gaps on
@@ -288,6 +288,40 @@ bindsym $mod+r mode "resize"
 
 
 ################################################################################
+# Colors
+################################################################################
+
+set $black  #1f222d
+set $nord0  #2E3440
+set $nord1  #3B4252
+set $nord2  #434C5E
+set $nord3  #4C566A
+set $nord4  #D8DEE9
+set $nord5  #E5E9F0
+set $nord6  #ECEFF4
+set $nord7  #8FBCBB
+set $nord8  #88C0D0
+set $nord9  #81A1C1
+set $nord10 #5E81AC
+set $nord11 #BF616A
+set $nord12 #D08770
+set $nord13 #EBCB8B
+set $nord14 #A3BE8C
+set $nord15 #B48EAD
+
+# class                 border  bg      fg      indicator
+client.focused          $nord7  $nord7  $nord0  $nord11
+client.focused_inactive $nord3  $nord3  $nord4  $nord1
+client.unfocused        $nord3  $nord3  $nord4  $nord1
+client.urgent           $nord11 $nord11 $nord4  $nord11
+client.placeholder      $nord3  $nord3  $nord4  $nord1
+client.background       $nord0
+
+
+
+
+
+################################################################################
 # Bar
 ################################################################################
 
@@ -296,36 +330,21 @@ bindsym $mod+b bar mode toggle
 
 bar {
         status_command i3status
-        position top
+        position bottom
         tray_padding 1
         font pango:Fira Code 16 
         separator_symbol " • "
 
         colors {
-                separator   #4c566a
-                background  #1f222d
-                statusline  #81a1c1
-                #                  border  bg      fg
-                focused_workspace  #1f222d #81a1c1 #1f222d 
-                active_workspace   #1f222d #1f222d #81a1c1 
-                inactive_workspace #1f222d #1f222d #4c566a
-                urgent_workspace   #1f222d #1f222d #ee829f
-                binding_mode       #1f222d #81a1c1 #2e3440
+                separator   $nord3
+                background  $black
+                statusline  $nord7
+                #                  border bg     fg
+                focused_workspace  $black $nord7 $black
+                active_workspace   $black $black $nord7 
+                inactive_workspace $black $black $nord3
+                urgent_workspace   $black $black $nord11
+                binding_mode       $black $nord7 $nord0
         }
 }
 
-
-
-
-
-################################################################################
-# Colors
-################################################################################
-
-# class                 border  bg      fg      indicat child_border
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-client.unfocused        #2e3440 #1f222d #888888 #1f222d
-client.urgent           #2f343a #ee829f #ffffff #ee829f
-client.placeholder      #2e3440 #1f222d #888888 #1f222d
-client.background       #242424
